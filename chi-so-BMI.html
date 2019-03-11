@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh chi so khoi co the</title>
+</head>
+<body>
+
+    <input id="kg" placeholder="weight" type="text">
+    <input id="cm" placeholder="height" type="text">
+    <input type="button" id="id_tinh" value="Tính" onclick="ti()">
+
+    <br>
+    hien thị kết quả BMI: <output type = "text" id="kq">
+    <br>
+
+
+<script>
+    function ti() {
+        let kg = parseFloat(document.getElementById("kg").value);
+        let cm = parseFloat(document.getElementById("cm").value);
+        let kq = kg / (cm * cm);
+
+        if (kq < 18)
+            document.getElementById("kq").value = "underweight";
+        else if (kq < 25.0)
+            document.getElementById("kq").value = "nomal";
+        else if (kq < 30.0)
+            document.getElementById("kq").value = "overweight";
+        else
+            document.getElementById("kg").value = "obese";
+    }
+</script>
+</body>
+</html>
